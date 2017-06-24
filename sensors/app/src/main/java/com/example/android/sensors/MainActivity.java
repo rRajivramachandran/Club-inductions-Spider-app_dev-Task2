@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         sense = manage.getDefaultSensor(Sensor.TYPE_PROXIMITY);
 
         if (sense == null)
-            Log.i("sTAT", "nO");
+            Log.i("STATUS", "NO");
         else
             manage.registerListener(proximitySensorEventListener, sense, SensorManager.SENSOR_DELAY_NORMAL);
 
@@ -88,19 +88,13 @@ public class MainActivity extends AppCompatActivity {
 
                 timer.start();
 
-
-
-                Log.i("startdamn", "0");
-
             }
             else
             {    timer.cancel();
                  m.setBackgroundColor(black);
-                //if(q.isCancelled()==false)
-                //q.cancel(true);
+                
                 read.setText("seconds to alarm:10");
                 status.setText("Come closer to start timer");
-                //m.setBackgroundColor(black);
 
             }
 
@@ -111,20 +105,17 @@ public class MainActivity extends AppCompatActivity {
     private class Taskx extends AsyncTask<Void, Void, Void> {
 
         protected Void doInBackground(Void...params)
-        {   Log.i("HERE","HERE");
+        {   
             play.start();
-
-            // try{ Thread.currentThread();
-            //    Thread.sleep(10000);}catch(InterruptedException e){Log.i("kkk","interrupted");};
             return null;
         }
 
         protected void onPostExecute(Void x)
         {
-            Log.i("njjj","JJJJJJJJ");
+           
             read.setText("Move back to test again");
             status.setText("Go back to reset timer");
-            //tim.setText("HIIIII");
+           
 
         }
 
